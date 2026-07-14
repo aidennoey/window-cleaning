@@ -158,7 +158,7 @@ const chatResponses = {
   },
   services: {
     label: 'What services do you offer?',
-    reply: "We offer window cleaning (interior &amp; exterior), pressure washing for driveways/pool decks/patios, screen cleaning &amp; repair, and gutter cleaning — inside and out."
+    reply: "We offer window cleaning (interior &amp; exterior), pressure washing, screen cleaning &amp; repair, gutter cleaning, paver sealing, landscape trimming, house &amp; office cleaning, and interior painting."
   },
   hours: {
     label: 'What are your hours?',
