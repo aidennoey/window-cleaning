@@ -1,3 +1,12 @@
+// Force tel: links to navigate even if a wrapping browser/webview
+// swallows the default anchor action on touch devices.
+document.querySelectorAll('a[href^="tel:"]').forEach(link => {
+  link.addEventListener('click', (e) => {
+    const href = link.getAttribute('href');
+    window.location.href = href;
+  });
+});
+
 // Header scroll state + progress bar
 const header = document.getElementById('siteHeader');
 const progressBar = document.getElementById('progressBar');
