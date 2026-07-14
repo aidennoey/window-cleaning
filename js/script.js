@@ -1,12 +1,3 @@
-// Force tel: links to navigate even if a wrapping browser/webview
-// swallows the default anchor action on touch devices.
-document.querySelectorAll('a[href^="tel:"]').forEach(link => {
-  link.addEventListener('click', (e) => {
-    const href = link.getAttribute('href');
-    window.location.href = href;
-  });
-});
-
 // Header scroll state + progress bar
 const header = document.getElementById('siteHeader');
 const progressBar = document.getElementById('progressBar');
@@ -61,8 +52,15 @@ const revealEls = document.querySelectorAll('.reveal');
 const revealObserver = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
-      entry.target.classList.add('is-visible');
-      revealObserver.unobserve(entry.target);
+      const el = entry.target;
+      el.classList.add('is-visible');
+      // Hard-clear the transform once the reveal transition finishes.
+      // A lingering CSS transform on an ancestor of a tel:/mailto: link
+      // can cause iOS Safari to silently swallow the tap.
+      el.addEventListener('transitionend', () => {
+        el.style.transform = 'none';
+      }, { once: true });
+      revealObserver.unobserve(el);
     }
   });
 }, { threshold: 0.15 });

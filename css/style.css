@@ -706,10 +706,8 @@ ul { list-style: none; }
   right: 24px;
   bottom: 24px;
   z-index: 1800;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 14px;
+  width: 62px;
+  height: 62px;
   font-family: var(--ff-body);
 }
 
@@ -756,6 +754,9 @@ ul { list-style: none; }
 }
 
 .chat-panel {
+  position: absolute;
+  right: 0;
+  bottom: 76px;
   width: 360px;
   height: 480px;
   max-height: 70vh;
