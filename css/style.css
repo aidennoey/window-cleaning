@@ -624,6 +624,7 @@ ul { list-style: none; }
 .footer-col h4 { color: #fff; font-family: var(--ff-head); font-size: 0.95rem; margin-bottom: 16px; }
 .footer-col p { margin-bottom: 10px; font-size: 0.92rem; }
 .footer-col a:hover { color: var(--sky); }
+.footer-social-link { display: inline-flex; align-items: center; gap: 8px; }
 .footer-inner .logo { margin-bottom: 14px; }
 .footer-bottom { padding: 22px 0; font-size: 0.82rem; text-align: center; opacity: 0.6; }
 
